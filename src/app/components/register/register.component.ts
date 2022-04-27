@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -24,28 +24,26 @@ export class RegisterComponent implements OnInit {
 
     });
     const data = await res.json();
-    console.log(data);
-    e.target.reset();
+    if ( data.status === 201) {
+      Swal.fire({
+        title: 'Success',
+        text: 'You have successfully registered',
+        icon: 'success'
+      });
+    }
+    else {
+      Swal.fire({
+        title: 'Error',
+        text: 'Something went wrong',
+        icon: 'error'
+      });
+    }e.target.reset();
   }
 
   constructor() { }
 
-  async ngOnInit(): Promise<void> {
-    // const res = await fetch('http://localhost:3000/api/v1/users', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({
-    //     name: 'John Doe',
-    //     email: 'john@gmail.com',
-    //     password: 'QWERTY1234',
-    //     lastName: 'Doe'
-    //   }),
+  ngOnInit() {
 
-    // });
-    // const data = await res.json();
-    // console.log(data);
 
   }
 

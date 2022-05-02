@@ -1,6 +1,6 @@
 <app-nav-bar> </app-nav-bar>
 <div class="leading-loose  flex justify-center mt-5">
-  <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl">
+  <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl"(submit)="addEmployee($event)">
     <p class="text-gray-800 text-xl mb-3">Add Employee</p>
     <div class="">
       <label class="block text-sm text-gray-00" for="cus_name">Name</label>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="mt-4">
-      <button class="p-2 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Add</button>
+      <button type="submit" class="p-2 text-white font-light tracking-wider bg-gray-900 rounded" >Add</button>
       <button class=" p-2 ml-36 text-white font-light tracking-wider bg-gray-900 rounded" routerLink="/list-empleados">Back</button>
     </div>
   </form>

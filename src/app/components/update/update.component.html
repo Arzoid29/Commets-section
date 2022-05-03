@@ -1,0 +1,27 @@
+<app-nav-bar> </app-nav-bar>
+<div class="leading-loose  flex justify-center mt-5">
+  <form (submit)="updateEmployee($event)" class="max-w-xl m-4 p-10 bg-white rounded shadow-xl" *ngFor="let info of infoToEdit">
+    <p class="text-gray-800 text-xl mb-3 font-bold">Edit Employee</p>
+    <div class="">
+      <label class="block text-sm text-gray-00" for="cus_name">Name</label>
+      <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Employee Name" aria-label="Name" [value]="info.name" >
+    </div>
+    <div class="mt-2">
+      <label class="block text-sm text-gray-600" for="cus_email">Last Name</label>
+      <input class="w-full px-5  py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Employee Last Name" [value]="info.lastName" >
+    </div>
+    <div class="mt-2">
+      <label class=" block text-sm text-gray-600" for="cus_email">Document ID</label>
+      <input class="w-full px-2 py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Document" [value]="info.documentId" >
+    </div>
+    <div class="mt-2">
+      <label class=" text-sm  text-gray-600" for="cus_email">Salary</label>
+      <input class="w-full px-2 py-1 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Salary" [value]="info.salary" >
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="p-2 text-white font-light tracking-wider bg-gray-900 rounded"  >Add</button>
+      <button class=" p-2 ml-36 text-white font-light tracking-wider bg-gray-900 rounded" routerLink="/list-empleados">Back</button>
+    </div>
+  </form>
+</div>

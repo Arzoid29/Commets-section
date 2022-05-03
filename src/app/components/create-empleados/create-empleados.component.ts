@@ -18,8 +18,8 @@ export class CreateEmpleadosComponent implements OnInit {
       },
       body: JSON.stringify({
         name: employee[0].value,
-        documentId: employee[2].value,
-        salary: employee[3].value,
+        documentId: employee[3].value.toString(),
+        salary: employee[2].value,
         lastName:  employee[1].value
       }),
 
@@ -28,7 +28,7 @@ export class CreateEmpleadosComponent implements OnInit {
     if ( data.status === 201) {
       Swal.fire({
         title: 'Success',
-        text: 'You have successfully registered',
+        text: 'You have successfully registered the employee',
         icon: 'success'
       });
     }
